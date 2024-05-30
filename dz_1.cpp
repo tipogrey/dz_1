@@ -110,6 +110,16 @@ string multiply(string num1, string num2)
     return result;
 }
 
+// Функция для выполнения поразрядного деления двоичных чисел
+string divide(string num1, string num2)
+{
+    int dividend = stoi(num1, 0, 2);
+    int divisor = stoi(num2, 0, 2);
+    int quotient = dividend / divisor;
+
+    return bitset<8>(quotient).to_string();
+}
+
 int main()
 {
     setlocale(LC_ALL, "Russian");
@@ -119,7 +129,8 @@ int main()
 
     cout << "Сложение: " << add(num1, num2) << endl; 
     cout << "Вычитание: " << subtract(num1, num2) << endl; 
-    cout << "Умножение: " << multiply(num1, num2) << endl;  
+    cout << "Умножение: " << multiply(num1, num2) << endl;
+    cout << "Деление: " << divide(num1, num2) << endl;
 
     return 0;
 }
